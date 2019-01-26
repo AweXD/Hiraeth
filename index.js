@@ -5,25 +5,35 @@ const config = require('./config.json');
 const spawn = require('./schedule.json');
 
 client.on('ready', () => {
-// Will get PST time and display it as a prescence
+	const checkTime = dateObject => [dateObject.getDay(), dateObject.getHours(), dateObject.getMinutes()];
 
 	/**
 	 * Time in PST (Compared to UTC -5)
 	 */
 	const PST = new Date(Date.now() - 10800000);
-	const checkTime = dateObject => [dateObject.getDay(), dateObject.getHours(), dateObject.getMinutes()];
+	const currentTime = checkTime(PST);
 
 	/**
 	 * Discord.GuildChannel object.
 	 */
 	const guildChannel = client.guilds.get('420258815112642561').channels.get('532793169461510145');
 
-	setInterval(() => {
-		// Check current time.
-		const time = checkTime(PST);
+	/**
+	 * Function to check for the next boss.
+	 */
+	const checkBoss = (day, hour) => spawn[day][hour];
 
-		// Send upcoming boss.
-		guildChannel.send(`${spawn[time[0]][time[2] === 24 ? 0 : time[2]]} will spawn in ${Math.abs(time[3] - 60)}`);
+	setInterval(() => {
+		// Check for the next boss.
+		for (let [DD, HH, MM] = currentTime; ; HH++) {
+			if (HH >= 24) HH = '00';
+			if (DD >= 7) DD = 0;
+
+			const boss = checkBoss(DD, `${HH}:${HH >= 17 ? '15' : '00'}`);
+			if (!boss) continue;
+
+			return guildChannel.send(`${boss} will spawn in ${Math.abs(MM - 60)}`);
+		}
 	}, 60000);
 });
 
