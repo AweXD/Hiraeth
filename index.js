@@ -23,7 +23,7 @@ client.on('ready', () => {
 		const time = checkTime(PST);
 
 		// Send upcoming boss.
-		guildChannel.send(`${spawn[time[0]][time[2] + 1]} will spawn in ${Math.abs(time[3] - 60)}`);
+		guildChannel.send(`${spawn[time[0]][time[2] === 24 ? 0 : time[2]]} will spawn in ${Math.abs(time[3] - 60)}`);
 	}, 60000);
 });
 
