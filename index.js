@@ -1,10 +1,10 @@
-const Discord = require(`discord.js`);
+const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const config = require(`./config.json`);
-const spawn = require(`./schedule.json`);
+const config = require('./config.json');
+const spawn = require('./schedule.json');
 
-client.on(`ready`, () => {
+client.on('ready', () => {
 // Will get PST time and display it as a prescence
 
 	/**
