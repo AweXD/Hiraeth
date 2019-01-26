@@ -1,5 +1,6 @@
 [
-	"Sunday" : {
+	// Sunday
+	{
 		"00:00" : "Kzarka", 
 		"03:00" : "Kutum",
 		"07:00" : "Nouver",	
@@ -9,7 +10,8 @@
 		"20:15" : "Kzarka & Nouver",
 		"22:15" : "Kutum & Karanda"
 	},
-	"Monday" : {
+	// Monday
+	{
 		"00:00" : "Karanda",
 		"03:00" : "Kzarka",
 		"07:00" : "Kzarka",
@@ -19,7 +21,8 @@
 		"20:15" : "Kzarka",
 		"22:15" : "Karanda"
 	},
-	"Tuesday" : {
+	// Tuesday
+	{
 		"00:00" : "Kutum",
 		"03:00" : "Kzarka",
 		"07:00" : "Kutum",
@@ -29,7 +32,8 @@
 		"20:15" : "Nouver & Karanda",
 		"22:15" : "Kutum & Garmoth"
 	},
-	"Wednessday" : {
+	// Wednesday
+	{
 		"00:00" : "Karanda",
 		"03:00" : "No Spawn",
 		"07:00" : "Karanda",
@@ -39,7 +43,8 @@
 		"20:15" : "Karanda & Kzarka",
 		"22:15" : "Nouver"
 	},
-	"Thursday" : {
+	// Thursday
+	{
 		"00:00" : "Kutum",
 		"03:00" : "Kzarka",
 		"07:00" : "Kutum", 
@@ -49,7 +54,8 @@
 		"20:15" : "Karanda",
 		"22:15" : "Kzarka & Garmoth"
 	},
-	"Friday" : {
+	// Friday
+	{
 		"00:00" : "Nouver",    
 		"03:00" : "Karanda", 
 		"07:00" : "Kutum",    
@@ -59,7 +65,8 @@
 		"20:15" : "Kutum & Kzarka",	
 		"22:15" : "Karanda" 
 	},
-	"Saturday" : {
+	// Saturday
+	{
 		"00:00" : "Offin", 
 		"03:00" :"Nouver", 
 		"07:00" : "Kutum", 
